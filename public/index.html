@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MENU</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Firebase App is always required and must be first -->
+    <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase-app.js"></script>
+
+    <!-- Add additional services that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase-messaging.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase-functions.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase.js"></script>
+    <script>
+      
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyDCYZY2hSlQKqW0Y-tMBTxvHvfheJPQVn0",
+        authDomain: "menu-for-robot.firebaseapp.com",
+        databaseURL: "https://menu-for-robot.firebaseio.com",
+        projectId: "menu-for-robot",
+        storageBucket: "menu-for-robot.appspot.com",
+        messagingSenderId: "947741127766"
+      };
+      firebase.initializeApp(config);
+    </script>
+    
+  </head>
+
+  
+  <body>
+    <form action="#" onsubmit="return send(this);">
+      <table id="menu_table">
+        <tr id>
+          <th>picture</th>
+          <th>name</th>
+          <th>price</th>
+          <th>amount</th>
+        </tr>
+      </table>
+      <div>
+          total price : <span id = "total_price">0</span>
+      </div>
+      <div>
+        table : 
+        <select id="table_number">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+        </select>
+      </div>
+      <div>
+        <input type="submit" value="Submit" />
+        <input type="reset" value="clear">
+      </div>
+
+    </form>
+
+  </body>
+  
+</html>
+
+
+<script src="js/index.js"></script>
+

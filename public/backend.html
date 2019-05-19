@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>backend</title>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Firebase App is always required and must be first -->
+    <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase-app.js"></script>
+    <!-- Add additional services that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase-messaging.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase-functions.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase.js"></script>
+
+    <!-- Add enentemitter2 and roslib -->
+    <!--
+    <script type="text/javascript" src="http://cdn.robotwebtools.org/EventEmitter2/current/eventemitter2.min.js"></script>
+    <script type="text/javascript" src="http://cdn.robotwebtools.org/roslibjs/current/roslib.min.js"></script>
+    -->
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyDCYZY2hSlQKqW0Y-tMBTxvHvfheJPQVn0",
+        authDomain: "menu-for-robot.firebaseapp.com",
+        databaseURL: "https://menu-for-robot.firebaseio.com",
+        projectId: "menu-for-robot",
+        storageBucket: "menu-for-robot.appspot.com",
+        messagingSenderId: "947741127766"
+      };
+      firebase.initializeApp(config);
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+  </head>
+
+  <body>
+        <table class="table table-striped" id="seperate_table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>name</th>
+                    <th>table</th>
+                    <th>state</th>
+                </tr>
+            </thead>
+            
+        </table>
+
+
+        <button id="bbb">hihi</button>
+  </body>
+</html>
+
+
+<script src="js/backend.js"></script>
+
