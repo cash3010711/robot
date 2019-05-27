@@ -89,10 +89,7 @@ db.ref("/seperate").on('value', function(snapshot){
             listener.subscribe(function(home) {
                 console.log(home.data);
                 if(home.data == "r1" || home.data == "r2"){
-                    if($("button").eq(0).attr('disabled') == undefined){
-                        $("button").eq(1).removeAttr('disabled');
-                    }
-                    $("button").eq(0).removeAttr('disabled');
+                    
                 }
                 listener.unsubscribe();
             });

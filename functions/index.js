@@ -24,19 +24,19 @@ exports.seperate = functions.database.ref('/order/{id}')
 
         //seperate blacktea
         for(var j=0; j<num_blacktea; j++){
-            index %= 12;
+            //index %= 12;
             snapshot.ref.root.child('seperate').push({"index" : index, "name" : "blacktea", "table" : table});
             index++;
         }  
         //seperate milktea
         for(var j=0; j<num_milktea; j++){
-            index %= 12;
+            //index %= 12;
             snapshot.ref.root.child('seperate').push({"index" : index, "name" : "milktea", "table" : table});
             index++;
         } 
         //seperate sandwich
         for(var j=0; j<num_sandwich; j++){
-            index %= 12;
+            //index %= 12;
             snapshot.ref.root.child('seperate').push({"index" : index, "name" : "sandwich", "table" : table});
             index++;
         } 

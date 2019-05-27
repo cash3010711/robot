@@ -17,7 +17,7 @@
     messageType : 'std_msgs/String'
  });*/
 
-
+var index = 0;
 
 var db = firebase.database();
 db.ref("/seperate").on('value', function(snapshot){
@@ -32,7 +32,7 @@ db.ref("/seperate").on('value', function(snapshot){
             content += '<th>' + val.index + '</th>';
             content += '<td>' + val.name + '</td>';
             content += '<td>' + val.table + '</td>';
-            content += '<td><button type="button" class="done" disabled="disabled">done</button></tr>';
+            content += '<td><button type="button" class="done">done</button></tr>';
             //content += '<td><button type="button" id="b' + val.index + '">done</button></tr>';
 
         });
@@ -44,6 +44,9 @@ db.ref("/seperate").on('value', function(snapshot){
             $('#seperate_table').empty();
             $('#seperate_table').append(head);
 
+            console.log($("td").eq(1).html());
+            console.log($("th").eq(4).html());
+            //document.getElementById('seperate_table').deleteRow(1);
         });
 
         /* deal with each seperate order */
@@ -55,7 +58,7 @@ db.ref("/seperate").on('value', function(snapshot){
                         var val = data.val();
                         if(val.index == getindex){
                             var id = data.key;
-                            var index = val.index;  // order index
+                            //var index = val.index;  // order index
                             var name = val.name;    // order name
                             var table = val.table;  // table number
                             
@@ -68,11 +71,15 @@ db.ref("/seperate").on('value', function(snapshot){
                             order_info.publish(msg);*/
 
                             /* delete firebase seperate */
-                            db.ref("/seperate/" + id ).remove()
+                            db.ref("/seperate/" + id ).remove();
                             console.log(data.key);
                             console.log(val.index);
                             console.log(val.name);
                             console.log(val.table);
+
+                            /* add to buffer*/
+                            snapshot.ref.root.child('buffer').push({"index" : index, "name" : name, "table" : table});
+                            index++;
                         }
                     });
                 });
@@ -82,6 +89,7 @@ db.ref("/seperate").on('value', function(snapshot){
 
 
         /* when robot back to original place*/ 
+        /*
         $("#bbb").click(function(){
             
             if($("button").eq(0).attr('disabled') == 'disabled'){
@@ -94,7 +102,7 @@ db.ref("/seperate").on('value', function(snapshot){
             }
 
         });
-
+        */
     }
 });
 
