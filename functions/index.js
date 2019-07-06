@@ -3,7 +3,7 @@ const admin = require('firebase-admin');
 admin.initializeApp(functions.config().firebase);
 
 
-var table, num_blacktea, num_milktea, num_sandwich;
+var table, num_blacktea, num_milktea, num_greentea;
 var index=0;
 
 exports.seperate = functions.database.ref('/order/{id}')
@@ -14,7 +14,7 @@ exports.seperate = functions.database.ref('/order/{id}')
         table = object.table;
         num_blacktea = object.meals.blacktea;
         num_milktea = object.meals.milktea;
-        num_sandwich = object.meals.sandwich;
+        num_greentea = object.meals.greentea;
 
         /*console.log('table : ', object.table);
         console.log('meals : ', object.meals);
@@ -35,9 +35,9 @@ exports.seperate = functions.database.ref('/order/{id}')
             index++;
         } 
         //seperate sandwich
-        for(var j=0; j<num_sandwich; j++){
+        for(var j=0; j<num_greentea; j++){
             //index %= 12;
-            snapshot.ref.root.child('seperate').push({"index" : index, "name" : "sandwich", "table" : table});
+            snapshot.ref.root.child('seperate').push({"index" : index, "name" : "greentea", "table" : table});
             index++;
         } 
         

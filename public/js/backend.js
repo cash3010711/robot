@@ -17,7 +17,7 @@
     messageType : 'std_msgs/String'
  });*/
 
-var index = 0;
+var index = 1;
 
 var db = firebase.database();
 db.ref("/seperate").on('value', function(snapshot){
